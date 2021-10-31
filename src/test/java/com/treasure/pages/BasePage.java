@@ -10,31 +10,35 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-    public abstract class BasePage {
+public abstract class BasePage {
 
-        public BasePage(){
-            PageFactory.initElements(Driver.get(), this);
-        }
+    public BasePage() {
+        PageFactory.initElements(Driver.get(), this);
+    }
 
-        @FindBy(css = ".user-avatar.no-border>div")
-        public WebElement userMenuBttn;
+    @FindBy(css = ".user-avatar.no-border>div")
+    public WebElement userMenuBttn;
 
-        @FindBy(xpath = "//span[text()='Logout']")
-        public WebElement logoutBtn;
+    @FindBy(xpath = "//span[text()='Logout']")
+    public WebElement logoutBtn;
 
-        @FindBy(css = ".toolbar-right>button")
-        public WebElement plusBttn;
+    @FindBy(css = ".toolbar-right>button")
+    public WebElement plusBttn;
 
-        @FindBy(xpath = "(//div[@class='title'])[1]")
-        public WebElement uploadFilesBttn;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/div/div/input[1]")
+    public WebElement uploadFilesBttn;
 
-        @FindBy(xpath = "(//div[@class='file-list-table ng-tns-c375-13 ng-star-inserted")
-        public WebElement hoverToItem;
+    @FindBy(xpath = "//div//div//div[2]/div//div//table/tbody/tr/td[1]")
+    public WebElement selectItem;
 
-        @FindBy(css = ".mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin")
-        public WebElement selectItem;
+    @FindBy(xpath = "/html/body/div[2]//mat-dialog-container/app-progress-dialog/div[1]/div[1]/div[1]")
+    public WebElement uploadMessage;
 
+    @FindBy(xpath = "/html//div[2]/button[3]/span[1]/span")
+    public WebElement downloadBttn;
 
+    @FindBy(xpath = "/html/body/div[2]//mat-dialog-container/app-progress-dialog/div[1]/div[1]/div[1]")
+    public WebElement downloadMessage;
 
 
 

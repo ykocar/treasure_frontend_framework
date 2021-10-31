@@ -22,17 +22,24 @@ public class UploadingFilesStepDefs {
         dashboardPage.plusBttn.click();
     }
 
-    @And("the user clicks Upload Files button")
-    public void theUserClicksUploadFilesButton() {
-
-        BrowserUtils.waitFor(2);
-        dashboardPage.uploadFilesBttn.click();
-    }
-
     @And("the user uploads a file")
     public void theUserUploadsAFile() {
 
-        dashboardPage.uploadFilesBttn.sendKeys("C:/Users/Nur/Desktop/TreasureCloud.txt");
+        dashboardPage.uploadFilesBttn.sendKeys("C:\\Users\\Nur\\Desktop\\TreasureCloud.txt");
+
+        BrowserUtils.waitFor(3);
     }
 
+    @Then("the user sees the upload message")
+    public void theUserSeesTheUploadMessage() {
+
+        String expectedUploadMessage = "All uploads finished";
+
+        String actualUploadMessage = dashboardPage.uploadMessage.getText();
+
+        System.out.println("actualUploadMessage = " + actualUploadMessage);
+        Assert.assertEquals(expectedUploadMessage, actualUploadMessage);
+
+
+    }
 }
