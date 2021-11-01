@@ -1,4 +1,4 @@
-
+@smoke
 Feature: Sign-in
 
   Background:

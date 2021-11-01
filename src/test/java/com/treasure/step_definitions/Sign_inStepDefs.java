@@ -53,8 +53,4 @@ public class Sign_inStepDefs {
         Assert.assertTrue(signinPage.errorEmailMessage.isDisplayed());
         Assert.assertTrue(signinPage.errorPasswordMessage.isDisplayed());
     }
-
-    @And("User should see reset password on the login page")
-    public void userShouldSeeResetPasswordOnTheLoginPage() {
-    }
 }
